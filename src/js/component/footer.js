@@ -5,40 +5,40 @@ export const Footer = () => {
     <footer className="text-center text-white">
       <div className="container pt-4">
         <section className="mb-4">
-          <p
+          <a
             className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://twitter.com/pina089"
+            target="_blank" href="https://twitter.com/pina089"
             role="button"
             data-mdb-ripple-color="dark"
           >
             <i className="fab fa-twitter"></i>
-          </p>
+          </a>
 
-          <p
+          <a
             className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://www.linkedin.com/in/alexpinabraojos/"
+            target="_blank" href="https://www.linkedin.com/in/alexpinabraojos/"
             role="button"
             data-mdb-ripple-color="dark"
           >
             <i className="fab fa-linkedin"></i>
-          </p>
+          </a>
 
-          <p
+          <a
             className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://github.com/AlexPinaBr"
+            target="_blank" href="https://github.com/AlexPinaBr"
             role="button"
             data-mdb-ripple-color="dark"
           >
             <i className="fab fa-github"></i>
-          </p>
+          </a>
         </section>
       </div>
 
       <div className="text-center text-dark p-3">
         © Designed in 2022
-        <p className="text-dark" href="https://pina089.com/">
+        <a className="text-dark" target="_blank" href="https://pina089.com/">
           Álex Pina
-        </p>
+        </a>
       </div>
     </footer>
   );

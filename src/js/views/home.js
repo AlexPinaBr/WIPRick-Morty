@@ -14,30 +14,23 @@ export const Home = () => {
 	},[])
 
 	return(
-		<div className="text-start mt-5">
+		<div className="container-fluid container-xl text-start mt-5">
 			<h1>CHARACTERS</h1>
-			<div className="row">
-				{store.characters.map((item)=>{
+			<div className="row gap-2">
+				{store.characters.map((item, index)=>{
 					console.log(item)
-					return (<CardCharacter key={item.id} 
-						name = {item.name}
-						image = {item.image}
-						species = {item.species}
-						gender = {item.gender}
-						origin = {item.origin.name}
+					return (<CardCharacter key={index} 
+						index = {index}
 					/>)
 				})}
 			</div>
 			<div className="text-start mt-5">
 				<h1>LOCATIONS</h1>
-				<div className="row">
-					{store.locations.map((item)=>{
+				<div className="row gap-2">
+					{store.locations.map((item, index)=>{
 						console.log(item)
-						return (<CardLocation key={item.id} 
-							name = {item.name}
-							type = {item.type}
-							dimension = {item.dimension}
-							residents = {item.residents}
+						return (<CardLocation key={index} 
+							index = {index}
 						/>)
 					})}
 				</div>

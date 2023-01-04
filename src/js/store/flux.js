@@ -16,6 +16,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch('https://rickandmortyapi.com/api/location')
 				const data = await response.json()
 				setStore({locations: data.results})
+			},
+			
+			addFavorites: (index) => {
+			//	console.log(getStore())
+			//	setStore({favorites:[...getStore().favorites, index]})
+			//	console.log(getStore())
+				if (getStore().favorites.indexOf(index) == -1){
+				setStore({favorites:[...getStore().favorites, index]})
+				}else { //fórmula para borrar si vuelves a dar al corazón
+					const deleteFavorites = store.favorites(valor => {
+					return valor != index;
+					})
+					setStore({favorites: deleteFavorites})
+				}
 			}
 			
 			
