@@ -14,27 +14,17 @@ export const Navbar = () => {
 					</Link>
 				</div>
 				<div className="ml-auto">
-				<div class="dropdown">
-					<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Favorites
-					</button>
-					<ul className="dropdown-menu dropdown-menu-start">
-						{store.favorites.map((index, i) => {
-							return( 
-							<li key={index} 
-							className="d-flex justify-content-between align-items-center">
-								{store.characters[index].name}
-								<i 
-									type='button' onClick={() => {
-										setStore(store.filter((e,i) => i != index))
-									}}
-									className="fa-solid fa-trash"> 
-                            	</i>
-							
-							</li>)
-						})}
-					</ul>
-				</div>
+					<div className="dropdown">
+						<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Favorites {store.favorites.length}
+						</button>
+						<ul className="dropdown-menu dropdown-menu-end">
+							{store.favorites.length > 0 ? 
+									store.favorites.map((favorite, i) =>{return <li key={i} className="dropdown-item d-flex justify-content-between">
+											{favorite} <p onClick={() => actions.addFavorites(favorite)}><i className="fa-solid fa-trash"></i></p></li>
+									}) : <li className="dropdown-item">EMPTY</li>}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</nav>
